@@ -1,0 +1,117 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+header img {
+  max-width: 200px;
+}
+header .retour {
+  position: absolute;
+  left: 1rem;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.details-restaurant img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.details-restaurant h1 {
+  font-family: "Shrikhand", cursive;
+  margin: 1rem;
+  font-size: 1.8rem;
+}
+.details-restaurant .favori {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+}
+
+.menu {
+  background-color: white;
+  border-radius: 2rem 2rem 0 0;
+  margin-top: -2rem;
+  padding: 1rem;
+  position: relative;
+}
+.menu h2 {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+.menu h2::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 0.2rem;
+  background-color: #99E2D0;
+  margin-top: 0.3rem;
+}
+.menu .plat {
+  background-color: white;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.menu .plat .description h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.menu .plat .description p {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+.menu .plat .prix {
+  font-weight: bold;
+}
+
+.commander {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+  margin: 2rem auto;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.commander:hover {
+  opacity: 0.9;
+}
+
+footer {
+  background-color: #353535;
+  color: white;
+  padding: 1rem;
+}
+footer p {
+  margin: 0.5rem 0;
+}
+
+/*# sourceMappingURL=LaFrancaise.css.map */

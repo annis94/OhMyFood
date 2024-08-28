@@ -1,0 +1,356 @@
+@import 'variables';
+@import 'mixins';
+@import 'base';
+
+// Variables
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$background-color: #f6f6f6;
+$text-color: #333;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Global styles
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+h1 {
+  font-family: 'Shrikhand', italic;
+}
+
+// Header
+header {
+  @include flex-center;
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  img {
+    max-width: 140px;
+  }
+}
+
+.fa-solid.fa-arrow-left {
+  position: absolute;
+  left: 1rem;
+  color: $text-color;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+// Restaurant details
+.details-restaurant {
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .fa-duotone.fa-solid.fa-heart {
+    position: absolute;
+    right: 1rem;
+    top: 2.9rem;
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
+}
+
+// Menu
+.menu {
+  background-color: white;
+  border-radius: 2rem 2rem 0 0;
+  margin-top: -3rem;
+  padding: 1rem;
+  position: relative;
+
+  h2 {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1rem;
+    margin-top: 2rem;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 2.5rem;
+      height: 0.2rem;
+      background-color: $tertiary-color;
+      margin-top: 0.3rem;
+    }
+  }
+
+  .plat {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .description {
+      h3 {
+        margin: 0;
+        font-size: 1rem;
+      }
+      p {
+        margin: 0.3rem 0 0;
+        font-size: 0.7rem;
+        color: #666;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: width 0.3s ease;
+      }
+    }
+
+    .prix {
+      font-weight: bold;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .check-container {
+      position: absolute;
+      right: -64px;
+      top: 0;
+      bottom: 0;
+      width: 64px;
+      background-color: #99E2D0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .check-icon {
+      width: 24px;
+      height: 24px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &::after {
+        content: '✓';
+        color: #99E2D0;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+
+    &:hover .check-container {
+      transform: translateX(-64px);
+    }
+
+    &:hover .prix {
+      transform: translateX(-64px);
+    }
+  }
+}
+
+// Styles pour les versions mobiles uniquement
+@media (max-width: 540px) {
+  .menu .plat {
+    &:hover .description p {
+      width: calc(100% - 100px);
+    }
+  }
+}
+
+// Button
+.commander {
+  @include flex-center;
+  background: linear-gradient(to bottom right, $secondary-color, $primary-color);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+  margin: 2rem auto;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  font-weight: bold;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+// Footer
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1.5rem;
+  flex-direction: row-reverse;
+  gap: 2rem;
+
+  .footer-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .logo-footer {
+    filter: brightness(0) invert(1);
+  }
+
+  p {
+    margin: 5px 0;
+  }
+
+  .logo-footer {
+    width: 6rem;
+    color: white;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu {
+    background-color: white;
+    border-radius: 2rem 2rem 0 0;
+    padding: 1rem;
+    position: relative;
+    margin-right: 10rem;
+    margin-left: 10rem;
+  }
+
+  .menu .plat {
+    background-color: white;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 50%;
+    margin-left: 10rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .fa-heart:before {
+    content: "\f004";
+    margin-right: 12rem;
+  }
+
+  .menu h2 {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1rem;
+    margin-top: 2rem;
+    margin-left: 11rem;
+  }
+
+  .plats {
+    align-content: center;
+  }
+
+
+  
+
+  footer {
+    display: flex;
+    text-align: justify;
+    background-color: #333;
+    color: #fff;
+    padding-top: 3rem;
+    flex-direction: row-reverse;
+    gap: 2rem;
+
+    .footer-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .logo-footer {
+      filter: brightness(0) invert(1);
+    }
+
+    p {
+      margin: 5px 0;
+    }
+
+    .logo-footer {
+      width: 6rem;
+      color: white;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .menu {
+    background-color: white;
+    border-radius: 2rem 2rem 0 0;
+    padding: 1rem;
+    position: relative;
+    margin-right: 15rem;
+    margin-left: 15rem;
+  }
+
+  .menu .plat {
+    background-color: white;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 50%;
+    margin-left: 15rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-right: 3rem;
+  }
+
+  .fa-heart:before {
+    content: "\f004";
+    padding-right: 10rem;
+  }
+
+  .menu h2 {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1rem;
+    margin-top: 2rem;
+    margin-left: 15rem;
+  }
+
+  .plats {
+    align-content: center;
+  }
+}
