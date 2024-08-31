@@ -95,8 +95,6 @@ header {
     }
   }
 
-
-
   .plat {
     position: relative;
     overflow: hidden;
@@ -111,76 +109,77 @@ header {
     align-items: flex-end;
 
     .description {
-        h3 {
-            margin: 0;
-            font-size: 1rem;
-        }
-        p {
-            margin: 0.3rem 0 0;
-            font-size: 0.9rem;
-            color: #666;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            transition: width 0.3s ease;
-        }
+      h3 {
+        margin: 0;
+        font-size: 1rem;
+      }
+      p {
+        margin: 0.3rem 0 0;
+        font-size: 0.7rem;
+        color: #666;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: width 0.3s ease;
+      }
     }
 
     .prix {
-        font-weight: bold;
-        margin-right: 10px;
-        display: flex;
-        align-items: center;
-        white-space: nowrap;
+      font-weight: bold;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
     }
 
     .check-container {
-        position: absolute;
-        right: -64px;
-        top: 0;
-        bottom: 0;
-        width: 64px;
-        background-color: #99E2D0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: transform 0.3s ease;
+      position: absolute;
+      right: -64px;
+      top: 0;
+      bottom: 0;
+      width: 64px;
+      background-color: #99E2D0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease;
     }
 
     .check-icon {
-        width: 24px;
-        height: 24px;
-        background-color: white;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      width: 24px;
+      height: 24px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-        &::after {
-            content: '✓';
-            color: #99E2D0;
-            font-size: 16px;
-            font-weight: bold;
-        }
+      &::after {
+        content: '✓';
+        color: #99E2D0;
+        font-size: 16px;
+        font-weight: bold;
+      }
     }
 
-   
-      &:hover .description p {
-        width: calc(100% - 100px);
-      }
-  
-      &:hover .check-container {
-        transform: translateX(-64px);
-      }
-  
-      &:hover .prix {
-        transform: translateX(-64px);
-      }
-    
-  
-  
+    &:hover .check-container {
+      transform: translateX(-64px);
+    }
+
+    &:hover .prix {
+      transform: translateX(-64px);
+    }
+  }
 }
- }
+
+// Styles pour les versions mobiles uniquement
+@media (max-width: 540px) {
+  .menu .plat {
+    &:hover .description p {
+      width: calc(100% - 100px);
+    }
+  }
+}
 
 // Button
 .commander {
@@ -203,8 +202,6 @@ header {
 
 // Footer
 footer {
-  /* display: flex; */
-  /* text-align: justify; */
   background-color: #333;
   color: #fff;
   padding: 1.5rem;
@@ -277,6 +274,7 @@ footer {
     align-content: center;
   }
 
+
   
 
   footer {
@@ -289,25 +287,24 @@ footer {
     gap: 2rem;
 
     .footer-item {
-        display: flex;
-        align-items: center;
-        gap: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
     }
 
     .logo-footer {
-        filter: brightness(0) invert(1);
+      filter: brightness(0) invert(1);
     }
-    
 
     p {
-        margin: 5px 0;
+      margin: 5px 0;
     }
 
-    .logo-footer{
-        width: 6rem;
-        color:white ;
+    .logo-footer {
+      width: 6rem;
+      color: white;
     }
-} 
+  }
 }
 
 @media screen and (min-width: 1440px) {

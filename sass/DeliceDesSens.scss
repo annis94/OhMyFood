@@ -24,8 +24,9 @@ body {
   background-color: $background-color;
   color: $text-color;
 }
+
 h1 {
-  font-family: 'Shrikhand', italic  ;
+  font-family: 'Shrikhand', italic;
 }
 
 // Header
@@ -42,11 +43,11 @@ header {
 }
 
 .fa-solid.fa-arrow-left {
-    position: absolute;
-    left: 1rem;
-    color: $text-color;
-    text-decoration: none;
-    font-size: 1.2rem;
+  position: absolute;
+  left: 1rem;
+  color: $text-color;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
 // Restaurant details
@@ -95,11 +96,14 @@ header {
   }
 
   .plat {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
     background-color: white;
     border-radius: 0.8rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
-    padding: 0.8rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -107,18 +111,72 @@ header {
     .description {
       h3 {
         margin: 0;
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
-
       p {
         margin: 0.3rem 0 0;
-        font-size: 0.9rem;
+        font-size: 0.7rem;
         color: #666;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: width 0.3s ease;
       }
     }
 
     .prix {
       font-weight: bold;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .check-container {
+      position: absolute;
+      right: -64px;
+      top: 0;
+      bottom: 0;
+      width: 64px;
+      background-color: #99E2D0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .check-icon {
+      width: 24px;
+      height: 24px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &::after {
+        content: '✓';
+        color: #99E2D0;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+
+    &:hover .check-container {
+      transform: translateX(-64px);
+    }
+
+    &:hover .prix {
+      transform: translateX(-64px);
+    }
+  }
+}
+
+// Styles pour les versions mobiles uniquement
+@media (max-width: 540px) {
+  .menu .plat {
+    &:hover .description p {
+      width: calc(100% - 100px);
     }
   }
 }
@@ -135,6 +193,7 @@ header {
   font-size: 1rem;
   cursor: pointer;
   transition: opacity 0.3s;
+  font-weight: bold;
 
   &:hover {
     opacity: 0.9;
@@ -143,43 +202,33 @@ header {
 
 // Footer
 footer {
-
-  footer {
-    /* display: flex; */
-    /* text-align: justify; */
-    background-color: #333;
-    color: #fff;
-    padding: 1.5rem;
-    flex-direction: row-reverse;
-    gap: 2rem;
-}
-
+  background-color: #333;
+  color: #fff;
+  padding: 1.5rem;
+  flex-direction: row-reverse;
+  gap: 2rem;
 
   .footer-item {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
   }
 
   .logo-footer {
-      filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
   }
-  
 
   p {
-      margin: 5px 0;
+    margin: 5px 0;
   }
 
-  .logo-footer{
-      width: 6rem;
-      color:white ;
+  .logo-footer {
+    width: 6rem;
+    color: white;
   }
-}   
-
-
+}
 
 @media (min-width: 1024px) {
-
   .menu {
     background-color: white;
     border-radius: 2rem 2rem 0 0;
@@ -187,7 +236,8 @@ footer {
     position: relative;
     margin-right: 10rem;
     margin-left: 10rem;
-}
+  }
+
   .menu .plat {
     background-color: white;
     border-radius: 0.8rem;
@@ -199,69 +249,65 @@ footer {
     align-items: flex-end;
     width: 50%;
     margin-left: 10rem;
-}
+  }
 
-h1 {
-  font-size: 1.6rem;
-  text-align: center;
-  margin-top: 1.5rem;
+  h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
 
-}
+  .fa-heart:before {
+    content: "\f004";
+    margin-right: 12rem;
+  }
 
-.fa-heart:before {
-  content: "\f004";
-  margin-right: 12rem;
-}
-.menu h2 {
-  text-transform: uppercase;
-  font-weight: 300;
-  font-size: 1rem;
-  margin-top: 2rem;
-  margin-left: 11rem;
-}
+  .menu h2 {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1rem;
+    margin-top: 2rem;
+    margin-left: 11rem;
+  }
 
-.plats{
-  align-content: center;
-}
-}
+  .plats {
+    align-content: center;
+  }
 
 
-footer {
-  display: flex;
-  text-align: justify;
-  background-color: #333;
-  color: #fff;
-  padding-top: 3rem;
-  flex-direction: row-reverse;
-  gap: 2rem;
+  
 
-  .footer-item {
+  footer {
+    display: flex;
+    text-align: justify;
+    background-color: #333;
+    color: #fff;
+    padding-top: 3rem;
+    flex-direction: row-reverse;
+    gap: 2rem;
+
+    .footer-item {
       display: flex;
       align-items: center;
       gap: 0.7rem;
-  }
+    }
 
-  .logo-footer {
+    .logo-footer {
       filter: brightness(0) invert(1);
-  }
-  
+    }
 
-  p {
+    p {
       margin: 5px 0;
-  }
+    }
 
-  .logo-footer{
+    .logo-footer {
       width: 6rem;
-      color:white ;
+      color: white;
+    }
   }
-} 
-
-
-
+}
 
 @media screen and (min-width: 1440px) {
-
-  
   .menu {
     background-color: white;
     border-radius: 2rem 2rem 0 0;
@@ -269,7 +315,8 @@ footer {
     position: relative;
     margin-right: 15rem;
     margin-left: 15rem;
-}
+  }
+
   .menu .plat {
     background-color: white;
     border-radius: 0.8rem;
@@ -281,29 +328,29 @@ footer {
     align-items: flex-end;
     width: 50%;
     margin-left: 15rem;
-}
+  }
 
-h1 {
-  font-size: 1.6rem;
-  text-align: center;
-  margin-top: 1.5rem;
-  padding-right: 3rem;
+  h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-right: 3rem;
+  }
 
-}
+  .fa-heart:before {
+    content: "\f004";
+    padding-right: 10rem;
+  }
 
-.fa-heart:before {
-  content: "\f004";
-  padding-right: 10rem;
-}
-.menu h2 {
-  text-transform: uppercase;
-  font-weight: 300;
-  font-size: 1rem;
-  margin-top: 2rem;
-  margin-left: 15rem;
-}
+  .menu h2 {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1rem;
+    margin-top: 2rem;
+    margin-left: 15rem;
+  }
 
-.plats{
-  align-content: center;
-}
+  .plats {
+    align-content: center;
+  }
 }

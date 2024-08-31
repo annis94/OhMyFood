@@ -171,24 +171,32 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const favoriBtns = document.querySelectorAll('.favori-btn');
-        
-        favoriBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                this.classList.toggle('active');
-                
-                const path = this.querySelector('path');
-                
-                if (this.classList.contains('active')) {
-                    path.style.fill = '#9356DC';
-                    path.style.stroke = '#9356DC';
-                } else {
-                    path.style.fill = 'none';
-                    path.style.stroke = '#101010';
-                }
-            });
+    // Sélectionne tous les boutons avec la classe 'favori-btn'
+    const favoriBtns = document.querySelectorAll('.favori-btn');
+    
+    // Parcourt chaque bouton sélectionné
+    favoriBtns.forEach(btn => {
+        // Ajoute un écouteur d'événement 'click' à chaque bouton
+        btn.addEventListener('click', function() {
+            // Bascule la classe 'active' sur le bouton cliqué
+            this.classList.toggle('active');
+            
+            // Sélectionne l'élément 'path' à l'intérieur du bouton
+            const path = this.querySelector('path');
+            
+            // Si le bouton a la classe 'active', change la couleur de remplissage et de contour
+            if (this.classList.contains('active')) {
+                path.style.fill = '#9356DC';
+                path.style.stroke = '#9356DC';
+            } else { 
+                // Sinon, réinitialise la couleur de remplissage et de contour
+                path.style.fill = 'none';
+                path.style.stroke = '#101010';
+            }
         });
     });
+});
+
     
     
     </script>
