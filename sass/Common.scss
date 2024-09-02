@@ -227,7 +227,15 @@ header {
     &:hover .description p {
       width: calc(100% - 100px);
     }
+    &:hover .description h3 {
+      width: calc(100% - 40px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
+
+
 }
 
 // Button

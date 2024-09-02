@@ -186,6 +186,12 @@ header img {
   .menu .plat:hover .description p {
     width: calc(100% - 100px);
   }
+  .menu .plat:hover .description h3 {
+    width: calc(100% - 40px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 .commander {
   display: flex;
