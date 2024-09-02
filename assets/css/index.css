@@ -210,6 +210,44 @@ header .localisation svg {
   align-items: center;
   padding: 11px 20px 0 13px;
 }
+.restaurants .carte-restaurant .card-header .conteneur-coeur {
+  position: relative;
+  font-size: 26px;
+  width: 26px;
+  height: 7px;
+  cursor: pointer;
+}
+.restaurants .carte-restaurant .card-header .coeur-vide, .restaurants .carte-restaurant .card-header .coeur-plein {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
+.restaurants .carte-restaurant .card-header .coeur-vide {
+  color: #000000;
+  opacity: 1;
+}
+.restaurants .carte-restaurant .card-header .coeur-plein {
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+}
+.restaurants .carte-restaurant .card-header .conteneur-coeur:hover .coeur-vide {
+  opacity: 0;
+}
+.restaurants .carte-restaurant .card-header .conteneur-coeur:hover .coeur-plein {
+  opacity: 1;
+  animation: remplissage 0.5s linear;
+}
+@keyframes remplissage {
+  0% {
+    clip-path: inset(100% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
 .restaurants .carte-restaurant .card-header h3 {
   font-size: 18px;
   margin: 0;
@@ -241,17 +279,6 @@ header .localisation svg {
   top: 3px;
   right: 1px;
   font-weight: bold;
-}
-.restaurants .carte-restaurant .icones .favori {
-  display: inline-block;
-  cursor: pointer;
-}
-.restaurants .carte-restaurant .icones .favori-btn {
-  transition: fill 0.3s ease, stroke 0.3s ease;
-}
-.restaurants .carte-restaurant .icones .favori:hover .favori-btn path {
-  fill: purple;
-  stroke: purple;
 }
 
 footer {

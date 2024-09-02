@@ -257,10 +257,52 @@ footer {
     margin-top: 1.5rem;
   }
 
-  .fa-heart:before {
-    content: "\f004";
-    margin-right: 12rem;
-  }
+
+
+  .conteneur-coeur {
+    position: relative;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.coeur-vide, .coeur-plein {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+}
+
+.coeur-vide {
+    color: #ccc;
+    opacity: 1;
+}
+
+.coeur-plein {
+    color: #ff4136;
+    opacity: 0;
+}
+
+.conteneur-coeur:hover .coeur-vide {
+    opacity: 0;
+}
+
+.conteneur-coeur:hover .coeur-plein {
+    opacity: 1;
+    animation: remplissage 0.5s linear;
+}
+
+@keyframes remplissage {
+    0% {
+        clip-path: inset(100% 0 0 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+
 
   .menu h2 {
     text-transform: uppercase;
