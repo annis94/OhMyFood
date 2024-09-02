@@ -210,6 +210,10 @@ header .localisation svg {
   align-items: center;
   padding: 11px 20px 0 13px;
 }
+.restaurants .carte-restaurant .card-header a {
+  text-decoration: none;
+  color: inherit;
+}
 .restaurants .carte-restaurant .card-header .conteneur-coeur {
   position: relative;
   font-size: 26px;
