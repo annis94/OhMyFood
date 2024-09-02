@@ -45,15 +45,53 @@ header img {
   height: 250px;
   object-fit: cover;
 }
-.details-restaurant h1 {
+.details-restaurant .title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.details-restaurant .title-container h1 {
+  font-family: "Shrikhand", italic;
   font-size: 1.6rem;
 }
-.details-restaurant .fa-duotone.fa-solid.fa-heart {
+.details-restaurant .conteneur-coeur {
+  position: relative;
+  font-size: 26px;
+  width: 58px;
+  height: 23px;
+  cursor: pointer;
+}
+.details-restaurant .coeur-vide, .details-restaurant .coeur-plein {
   position: absolute;
-  right: 1rem;
-  top: 2.9rem;
-  font-size: 1.5rem;
-  font-weight: 100;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
+.details-restaurant .coeur-vide {
+  color: #000000;
+  opacity: 1;
+}
+.details-restaurant .coeur-plein {
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+}
+.details-restaurant .conteneur-coeur:hover .coeur-vide {
+  opacity: 0;
+}
+.details-restaurant .conteneur-coeur:hover .coeur-plein {
+  opacity: 1;
+  animation: remplissage 0.5s linear;
+}
+@keyframes remplissage {
+  0% {
+    clip-path: inset(100% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
 }
 
 .menu {
@@ -212,15 +250,16 @@ footer .logo-footer {
     width: 50%;
     margin-left: 10rem;
   }
-  h1 {
-    font-size: 1.6rem;
-    text-align: center;
-    margin-top: 1.5rem;
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 39%;
   }
   .conteneur-coeur {
     position: relative;
     font-size: 40px;
-    width: 40px;
+    margin-right: 8rem;
     height: 40px;
     cursor: pointer;
   }
@@ -309,15 +348,12 @@ footer .logo-footer {
     width: 50%;
     margin-left: 15rem;
   }
-  h1 {
-    font-size: 1.6rem;
-    text-align: center;
-    margin-top: 1.5rem;
-    padding-right: 3rem;
-  }
-  .fa-heart:before {
-    content: "\f004";
-    padding-right: 10rem;
+  .conteneur-coeur {
+    position: relative;
+    font-size: 40px;
+    margin-right: 25rem;
+    height: 40px;
+    cursor: pointer;
   }
   .menu h2 {
     text-transform: uppercase;
