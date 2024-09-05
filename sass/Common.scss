@@ -222,22 +222,18 @@ header {
   }
 }
 
-// Styles pour les versions mobiles uniquement
-@media (max-width: 540px) {
-  .menu .plat {
-    &:hover .description p {
-      width: calc(100% - 100px);
-    }
-    &:hover .description h3 {
-      width: calc(100% - 40px);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+.menu .plat {
+  &:hover .description p {
+    width: calc(100% - 100px);
   }
-
-
+  &:hover .description h3 {
+    width: calc(100% - 40px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
+
 
 // Button
 .commander {
@@ -283,6 +279,18 @@ footer {
   .logo-footer {
     width: 6rem;
     color: white;
+  }
+}
+
+
+@media (min-width: 541px) {
+  .menu .plat {
+    &:hover .description p {
+      width: auto; 
+    }
+    &:hover .description h3 {
+      width: auto;
+    }
   }
 }
 
