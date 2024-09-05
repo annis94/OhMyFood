@@ -1,6 +1,9 @@
 # OhMyFood
 
-Un site "mobile-first" qui répertorie les menus de restaurants gastronomiques et permet aux clients de composer leur menu pour réduire le temps d'attente.
+**Lien du projet GitHub** : [https://github.com/annis94/OhMyFood](https://github.com/annis94/OhMyFood)
+
+## Description
+OhMyFood est un site “mobile first” qui répertorie les menus de restaurants gastronomiques et permet aux clients de composer leur menu pour réduire le temps d'attente.
 
 ## Fonctionnalités
 
